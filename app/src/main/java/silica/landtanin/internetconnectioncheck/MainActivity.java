@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (isOnline() == true) {
-                    Toast.makeText(MainActivity.this, "Connected", 5000).show();
+                    Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Connection Failed", 5000).show();
+                    Toast.makeText(MainActivity.this, "Connection Failed", Toast.LENGTH_LONG).show();
                 }
             }
         });
