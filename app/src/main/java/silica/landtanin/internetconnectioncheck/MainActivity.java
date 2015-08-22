@@ -33,21 +33,21 @@ public class MainActivity extends AppCompatActivity {
 
         checkNetButton = (Button) findViewById(R.id.button);
 
-    }
+    }// bind widget
 
     private void buttonController() {
         checkNetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (isOnline() == true) {
+                if (isOnline()) {
                     Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(MainActivity.this, "Connection Failed", Toast.LENGTH_LONG).show();
                 }
             }
         });
-    }
+    } //button Controller
 
     private boolean isOnline() {
 
@@ -56,14 +56,11 @@ public class MainActivity extends AppCompatActivity {
         ConnectivityManager objConnectManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo objNetWorkInfo = objConnectManager.getActiveNetworkInfo();
 
-        if (objNetWorkInfo != null && objNetWorkInfo.isConnected()) {
-            result = true;
-        } else {
-            result = false;
-        }
+        if ((objNetWorkInfo != null) && objNetWorkInfo.isConnected()) result = true;
+        else result = false;
 
         return result;
-    }
+    }// is online
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
